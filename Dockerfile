@@ -6,7 +6,8 @@ RUN echo 'mysql-server mysql-server/root_password password root' | debconf-set-s
 		&& echo 'mysql-server mysql-server/root_password_again password root' | debconf-set-selections
 
 RUN apt-get install -y mysql-server
+RUN sed -i -e "s@^datadir.*@datadir = /data/mysql@" /etc/mysql/my.cnf
 
-ADD . /
+COPY . /
 
 CMD ["/bin/bash", "start.sh"]
