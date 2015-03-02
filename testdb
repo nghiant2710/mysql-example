@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script is based on http://jetpackweb.com/blog/2009/07/20/bash-script-to-create-mysql-database-and-user/
  
 EXPECTED_ARGS=3
 E_BADARGS=65
